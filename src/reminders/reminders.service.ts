@@ -13,7 +13,7 @@ export class RemindersService {
     private twilioProgrammableVoiceService: TwilioProgrammableVoiceService,
   ) { }
 
-  create(createReminderDto: CreateReminderDto) {
+  async create(createReminderDto: CreateReminderDto) {
     const { phone, message, scheduledTime } = createReminderDto
 
     // YYYY-MM-DDTHH:mm:ss.sssZ
