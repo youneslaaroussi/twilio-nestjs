@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ScheduleModule } from '@nestjs/schedule';
+import { RemindersController } from './reminders/reminders.controller';
+import { RemindersService } from './reminders/reminders.service';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [ScheduleModule.forRoot()],
+  controllers: [RemindersController],
+  providers: [RemindersService],
 })
-export class AppModule {}
+export class AppModule { }
